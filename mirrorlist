@@ -1,0 +1,12 @@
+## Australia
+Server = http://archlinux.melbourneitmirror.net/$repo/os/$arch
+## Australia
+Server = http://ftp.swin.edu.au/archlinux/$repo/os/$arch
+## Australia
+Server = http://syd.mirror.rackspace.com/archlinux/$repo/os/$arch
+## Australia
+Server = http://mirror.internode.on.net/pub/archlinux/$repo/os/$arch
+## Australia
+Server = http://archlinux.mirror.digitalpacific.com.au/$repo/os/$arch
+## Australia
+Server = http://ftp.iinet.net.au/pub/archlinux/$repo/os/$arch
