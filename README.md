@@ -14,3 +14,14 @@ Dependancies:
 - sewwk dark icon theme
 - google chrome
 - google chrome dev
+
+
+TODO:
+- finish make folders
+- finish dependancies
+- add set up audio script
+- add script to modify xfconf
+- add package install script
+- add key bindings
+- add enable multilib
+- add dmenu scripts
