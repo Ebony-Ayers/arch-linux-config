@@ -1,25 +1,36 @@
 # arch-linux-config
 
 Dependancies:
+- xorg
+- lightdm
+- lightdm-gtk-greater
 - xfce4
-- xfce4 goodies
-- gnome terminal
+- xfce4-goodies
+- gnome-terminal
 - nautilus
 - gedit
 - musescore
-- vs code
+- code
 - pavucontrol
 - alsa (and other things from arch wiki)
 - sweet dark gtk theme
-- sewwk dark icon theme
-- google chrome
-- google chrome dev
+- candy dark icon theme
+- google-chrome (aur)
+- google-chrome-dev (aur)
+- i3lock-fancy (aur)
+- lmms
+- audacity
+- gimp
+- gparted
+- spotify (aur)
+- blender
+- arduino
+- sfxr (aur)
+- libreoffice-fresh
 
 
 TODO:
-- finish make folders
-- finish dependancies
-- add set up audio script
+add set up audio script
 - add script to modify xfconf
 - add package install script
 - add key bindings
