@@ -1,5 +1,0 @@
-useradd -m joseph
-passwd joseph
-usermod -aG wheel,audio,video,optical,storage joseph
-export EDITOR=nano
-visudo
