@@ -1,3 +1,9 @@
+if [ $# -eq 0]
+then
+  echo "Error: no partition supplied"
+  exit
+ fi
+ 
 mount $1 /mnt
 btrfs subvolume create /mnt/@root
 btrfs subvolume create /mnt/@home
