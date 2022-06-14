@@ -1,4 +1,3 @@
-
 if [ $# -eq 0 ]
 then
   echo "Error: no machine name provided"
