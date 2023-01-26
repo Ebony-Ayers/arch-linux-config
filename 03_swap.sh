@@ -6,7 +6,7 @@ fi
 
 if [ $1 = "off" ]
 then
-	swapoff
+	swapoff -a
 else
 	if [ $# -gt 1 ]
 	then

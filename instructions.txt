@@ -1,0 +1,42 @@
+Unless stated otherwise run all the scripts sequentially.
+
+01: no arguments
+
+02: For script 02 there are two options "02_btrfs_create_root.sh" and "02_ext4_create_root.sh" for btrfs and ext4 root partitions respectivly. Only chose one.
+02: First argument is the desired root partition
+02: To format the partition add the optional second argument "format"
+
+03: to disable swap replace the first agument with "off"
+03: First argument is the desired swap partition
+03: To format the partition add the optional second argument "format"
+
+04: First argument is the desired efi boot partition
+04: To format the partition add the optional second argument "format"
+
+05: no arguments
+
+BEFORE PROCEDING RUN THE FOLLOWING COMMANDS
+arch-chroot /mnt
+cd /install
+
+06: For script 02 there are two options "06_btrfs_update_pacman.sh" and "06_ext4_update_pacman.sh" for btrfs and ext4 root partitions respectivly. Only chose one.
+06: no arguments
+
+07: first argument is the desired time zone. If none is specified it will default to Melbourne Australia.
+
+08: first argument is the desired machine name.
+
+09: first argument is the system cpu vendor. Options are "amd" or "intel".
+
+10: first agument is the boot partition
+
+11: first argument is the name of the user you wish to add
+11: this script will drop you into nano editing the sudoers file. Uncomment "%wheel ALL=(ALL) ALL".
+
+12: this script is optional.
+12: there are three arguments which can be speficied in any order. The options are "server=wayland", "server=xorg", "gpu=amd", "gpu=intel", "gpu=nvidia", de=gnome, amn de=kde.
+
+BEFORE PROCEDING RUN THE FOLLOWING COMMANDS
+exit
+
+13: no arguments

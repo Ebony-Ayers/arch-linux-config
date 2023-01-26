@@ -43,7 +43,7 @@ First command line argument is the efi partition.
 
 Installs grub.
 
-### 11_aditional_software.sh
+### 11_graphics.sh
 First command line argument is which CPU vendor to install micro code for. Options are "amd" or "intel".
 
 Installs generic pacages: gcc, make, cmake, ccahce, base-devel, python
