@@ -1,2 +1,7 @@
 mkinitcpio -P
-echo "Install correct cpu firmware. pacman -S amd-ucode or pacman -S intel-ucode"
+if [ $1 = "amd" ]
+then
+	pacman -S amd-ucode
+else
+	pacman -S intel-ucode
+fi
