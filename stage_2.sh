@@ -17,7 +17,7 @@ promptConfirm "Enter new user name"
 userName=$promptResult
 
 echo ""
-promptAnswersSingle "Enter gpu vendor" "amd" "nvidia"
+promptAnswersSingle "Enter gpu vendor" "amd" "nvidia" "intel"
 gpuVendor=$promptResult
 promptAnswersSingle "Enter desiered graphics server" "wayland" "xorg"
 graphicsServer=$promptResult
@@ -43,9 +43,9 @@ bash legacy/11_users.sh $userName
 
 if [[ $de = "none" ]]
 then
-	bash legacy/12_graphics.sh $gpuVendor $graphicsServer
+	bash legacy/12_graphics.sh "gpu=$gpuVendor" "server=$graphicsServer"
 else
-	bash legacy/12_graphics.sh $gpuVendor $graphicsServer $de
+	bash legacy/12_graphics.sh "gpu=$gpuVendor" "server=$graphicsServer" "de=$de"
 fi
 
 additionalPackagesList=""
@@ -54,14 +54,22 @@ for arg in $additionalPackages; do
 	then
 		bash legacy/install_c++.sh
 	elif [[ $arg = "python" ]]
+	then
 		bash legacy/install_python.sh
 	elif [[ $arg = "qemu" ]]
+	then
 		bash legacy/install_qemu.sh
 	elif [[ $arg = "vs code" ]]
+	then
 		additionalPackagesList="code $additionalPackagesList"
 	else
 		additionalPackagesList="$arg $additionalPackagesList"
 	fi
 done
 pacman -S $additionalPackagesList
+
+echo ""
+echo "Run the following commands:"
+echo "exit"
+echo "bash stage_3.sh"
 

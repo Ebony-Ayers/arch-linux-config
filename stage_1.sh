@@ -22,6 +22,8 @@ bootPart=$promptResult
 promptYesNo "Do you want to format the boot partition"
 formatBoot=$promptResult
 
+echo ""
+
 bash legacy/01_initial_commands.sh
 
 if [[ $formatRoot = "y" ]]
@@ -58,7 +60,7 @@ fi
 echo "rootFS=\"$rootFS\"" >> variables.sh
 echo "bootPart=\"$bootPart\"" >> variables.sh
 
-bash 05_pacstrap.sh
+bash legacy/05_pacstrap.sh
 
 echo "Run the following commands:"
 echo "arch-chroot /mnt"
