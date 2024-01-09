@@ -62,6 +62,10 @@ echo "bootPart=\"$bootPart\"" >> variables.sh
 
 bash legacy/05_pacstrap.sh
 
+echo ""
+echo ""
 echo "Run the following commands:"
 echo "arch-chroot /mnt"
 echo "cd /install"
+echo "bash stage_2.sh"
+echo ""

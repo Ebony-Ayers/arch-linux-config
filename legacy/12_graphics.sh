@@ -1,5 +1,4 @@
 packages=""
-bloatPackages=""
 hasgraphicsServer=false
 hasWayland=false
 hasXorg=false
@@ -52,8 +51,7 @@ do
 	#desktop enviroments
 	if [ $arg = "de=gnome" ]
 	then
-		packages="$packages gnome gnome-extra gnome-shell-extensions gnome-tweaks dconf-editor gparted gedit-plugins"
-		bloatPackages="gnome-contacts gnome-weather gnome-maps simple-scan gnome-tour gnome-font-viewer gnome-characters gnome-connections gnome-disk-utility yelp file-roller seahorse geary epiphany gnome-logs gnome-calendar gnome-clocks"
+		packages="$packages gnome gnome-extra gnome-shell-extensions gnome-tweaks dconf-editor gparted gedit-plugins gnome-browser-connector"
 		displayManager="gdm"
 	fi
 	if [ $arg = "de=kde" ]
@@ -83,8 +81,4 @@ then
 fi
 
 pacman -S $packages --noconfirm
-if [ $bloatPackages != "" ]
-then
-	pacman -Rsu $bloatPackages --noconfirm
-fi
 systemctl enable $displayManager
