@@ -37,7 +37,7 @@ fi
 #install gnome packages from the aur and remove bloat
 if [[ $de = "gnome" ]]
 then
-	sudo pacman -Rsu gnome-contacts gnome-weather gnome-maps simple-scan gnome-tour gnome-font-viewer gnome-characters gnome-connections gnome-disk-utility yelp file-roller seahorse geary epiphany gnome-logs gnome-calendar gnome-clocks --noconfirm
+	sudo pacman -Rsu gnome-contacts gnome-weather gnome-maps simple-scan gnome-tour gnome-font-viewer gnome-characters gnome-connections gnome-disk-utility yelp epiphany gnome-logs gnome-calendar gnome-clocks gnome-text-editor --noconfirm
 	if [[ $installedVScode -eq 1 ]]
 	then
 		yay -S nautilus-code
@@ -92,16 +92,17 @@ then
 	
 	if [[ $installedCpp -eq 1 ]]
 	then
+		#disabled vs code extensions due to super slow install
 		#c++ extensions
-		code --install-extension twxs.cmake
-		code --install-extension ms-vscode.cmake-tools
-		code --install-extension ms-vscode.makefile-tools
+		#code --install-extension twxs.cmake
+		#code --install-extension ms-vscode.cmake-tools
+		#code --install-extension ms-vscode.makefile-tools
 		
 		cp vs_code_settings.json "~/.config/Code - OSS/User/settings.json"
 		
-		echo ""
-		echo "You will have to manually install the vscode c++ extension. Installing it from the commandline is a known bug."
-		echo ""
+		#echo ""
+		#echo "You will have to manually install the vscode c++ extension. Installing it from the commandline is a known bug."
+		#echo ""
 	else
 		cp vs_code_settings_no_cpp.json "~/.config/Code - OSS/User/settings.json"
 	fi

@@ -74,7 +74,7 @@ for arg in $additionalPackages; do
 		additionalPackagesList="$arg $additionalPackagesList"
 	fi
 done
-pacman -S $additionalPackagesList
+pacman -S $additionalPackagesList --noconfirm
 
 echo "userName=\"$userName\"" >> variables.sh
 echo "de=\"$de\"" >> variables.sh
