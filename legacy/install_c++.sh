@@ -1,1 +1,1 @@
-pacman -S gcc make cmake ccache --noconfirm
+pacman -S gcc make cmake ccache gdb --noconfirm
