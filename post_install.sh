@@ -34,6 +34,16 @@ then
 	fi
 fi
 
+#install browser
+promptAnswersMulti "What browser would you like to install" "Chrome" "Firefox" "None"
+browser=$promptResult
+if [[ $browser = "Chrome" ]]
+then
+	yay -S google-chrome
+elif [[ $browser = "Firefox" ]]
+	sudo pacman -S firefox --noconfirm
+fi
+
 #install gnome packages from the aur and remove bloat
 if [[ $de = "gnome" ]]
 then
@@ -75,7 +85,14 @@ then
 		gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding "<Control><Alt>t"
 		gsettings set org.gnome.calculator button-mode "advanced"
 		gsettings set org.gnome.shell disabled-extensions "['apps-menu@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com']"
-		gsettings set org.gnome.shell favorite-apps "['org.gnome.Nautilus.desktop', 'org.gnome.Console.desktop', 'org.gnome.Calculator.desktop']"
+		if [[ $browser = "Chrome" ]]
+		then
+			gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Console.desktop', 'org.gnome.Calculator.desktop']"
+		elif [[ $browser = "Firefox" ]]
+			gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Console.desktop', 'org.gnome.Calculator.desktop']"
+		else
+			gsettings set org.gnome.shell favorite-apps "['org.gnome.Nautilus.desktop', 'org.gnome.Console.desktop', 'org.gnome.Calculator.desktop']"
+		fi
 	fi
 fi
 
@@ -87,7 +104,7 @@ then
 	#python extension
 	if [[ $installedPython -eq 1 ]]
 	then
-		code --install-extension ms-python.python
+		#code --install-extension ms-python.python
 	fi
 	
 	if [[ $installedCpp -eq 1 ]]

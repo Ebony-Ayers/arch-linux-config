@@ -88,6 +88,10 @@ mv post_install.sh "/home/$userName/post_install.sh"
 mv vs_code_settings.json "/home/$userName/vs_code_settings.json"
 mv vs_code_settings_no_cpp.json "/home/$userName/vs_code_settings_no_cpp.json"
 cp prompt.sh "/home/$userName/prompt.sh"
+if [[ $de = "gnome" ]]
+then
+	mv configure_gnome_extensions.sh "/home/$userName/configure_gnome_extensions.sh"
+fi
 
 echo ""
 echo "Run the following commands:"
