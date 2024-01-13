@@ -1,2 +1,2 @@
-pacman -S qemu libvirt virt-manager ebtables --noconfirm
+pacman -S qemu-desktop virt-manager ebtables --noconfirm
 systemctl enable libvirtd

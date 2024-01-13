@@ -23,7 +23,7 @@ git config --global advice.addIgnoredFile false
 #if qemu is installed add user to libvert group
 if [[ $installedQemu -eq 1 ]]
 then
-	sudo usermod -aG libvirtd $userName #group did not exist
+	sudo usermod -aG libvirtd $userName
 	
 	#ask the user if they would like to install looking glass
 	promptYesNo "Would you like to install Looking Glass"
@@ -41,6 +41,7 @@ if [[ $browser = "Chrome" ]]
 then
 	yay -S google-chrome
 elif [[ $browser = "Firefox" ]]
+then
 	sudo pacman -S firefox --noconfirm
 fi
 
@@ -89,6 +90,7 @@ then
 		then
 			gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Console.desktop', 'org.gnome.Calculator.desktop']"
 		elif [[ $browser = "Firefox" ]]
+		then
 			gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Console.desktop', 'org.gnome.Calculator.desktop']"
 		else
 			gsettings set org.gnome.shell favorite-apps "['org.gnome.Nautilus.desktop', 'org.gnome.Console.desktop', 'org.gnome.Calculator.desktop']"
@@ -101,25 +103,9 @@ if [[ $installedVScode -eq 1 ]]
 then
 	mkdir -p "~/.config/Code - OSS/User"
 	
-	#python extension
-	if [[ $installedPython -eq 1 ]]
-	then
-		#code --install-extension ms-python.python
-	fi
-	
 	if [[ $installedCpp -eq 1 ]]
 	then
-		#disabled vs code extensions due to super slow install
-		#c++ extensions
-		#code --install-extension twxs.cmake
-		#code --install-extension ms-vscode.cmake-tools
-		#code --install-extension ms-vscode.makefile-tools
-		
 		cp vs_code_settings.json "~/.config/Code - OSS/User/settings.json"
-		
-		#echo ""
-		#echo "You will have to manually install the vscode c++ extension. Installing it from the commandline is a known bug."
-		#echo ""
 	else
 		cp vs_code_settings_no_cpp.json "~/.config/Code - OSS/User/settings.json"
 	fi
