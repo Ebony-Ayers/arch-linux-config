@@ -25,7 +25,7 @@ promptAnswersSingle "Enter desiered desktop envrioment" "gnome" "kde" "none"
 de=$promptResult
 
 echo ""
-promptAnswersMulti "Optional additional packages to install" "blender" "c++" "discord" "gimp" "gparted" "musescore" "python" "qemu" "qgis" "vscode"
+promptAnswersMulti "Optional additional packages to install" "blender" "c++" "discord" "gimp" "gparted" "musescore" "python" "qgis" "vscode"
 additionalPackages=$promptResult
 
 if [[ $bootFS = "ext4" ]]
@@ -62,10 +62,6 @@ for arg in $additionalPackages; do
 	then
 		bash legacy/install_python.sh
 		installedPython=1
-	elif [[ $arg = "qemu" ]]
-	then
-		bash legacy/install_qemu.sh $userName
-		installedQemu=1
 	elif [[ $arg = "vscode" ]]
 	then
 		additionalPackagesList="code $additionalPackagesList"
