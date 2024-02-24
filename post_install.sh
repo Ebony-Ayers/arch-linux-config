@@ -19,6 +19,7 @@ fi
 git config --global push.default "current"
 git config --global push.autoSetupRemote true
 git config --global advice.addIgnoredFile false
+git config --global init.defaultBranch "main"
 
 #if qemu is installed add user to libvert group
 if [[ $installedQemu -eq 1 ]]
