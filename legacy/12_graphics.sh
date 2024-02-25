@@ -51,7 +51,7 @@ do
 	#desktop enviroments
 	if [ $arg = "de=gnome" ]
 	then
-		packages="$packages gnome gedit gnome-sound-recorder gnome-shell-extensions gnome-tweaks dconf-editor gparted gedit-plugins gnome-browser-connector"
+		packages="$packages gnome gedit gnome-sound-recorder gnome-shell-extensions gnome-tweaks dconf-editor gparted gedit-plugins gnome-browser-connector espeakup"
 		displayManager="gdm"
 	fi
 	if [ $arg = "de=kde" ]
