@@ -1,3 +1,4 @@
+echo "KEYMAP=us" >> /etc/vconsole.conf
 mkinitcpio -P
 if [ $1 = "amd" ]
 then
