@@ -21,7 +21,7 @@ promptAnswersSingle "Enter gpu vendor" "amd" "nvidia" "intel"
 gpuVendor=$promptResult
 promptAnswersSingle "Enter desiered graphics server" "wayland" "xorg"
 graphicsServer=$promptResult
-promptAnswersSingle "Enter desiered desktop envrioment" "gnome" "kde" "none"
+promptAnswersSingle "Enter desiered desktop envrioment" "gnome" "kde" "cinnamon" "none"
 de=$promptResult
 
 echo ""
