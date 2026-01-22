@@ -67,6 +67,11 @@ do
 			fi
 		fi
 	fi
+	if [ $arg = "de=cinnamon" ]
+	then
+		packages="$packages cinnamon lightdm lightdm-slick-greeter gnome-keyring"
+		displayManager="lightdm"
+	fi
 done
 
 if [ "$hasgraphicsServer" = false ]
