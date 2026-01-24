@@ -5,7 +5,7 @@ then
 fi
 
 export EDITOR=nano
-read -p "You need to manually uncomment the line \"wheel      ALL=(ALL:ALL) ALL\". Press enter to continue." temp
+read -p "You need to manually uncomment the line \"%wheel      ALL=(ALL:ALL) ALL\". Press enter to continue." temp
 visudo
 useradd -m $1
 usermod -aG video,storage,optical,audio,wheel $1
